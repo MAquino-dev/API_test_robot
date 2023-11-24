@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230626 15:54:23.476" rpa="false" schemaversion="4">
+<suite id="s1" name="Specs" source="C:\Users\Matias Sanchez\PycharmProjects\robot_api_test\specs">
+<suite id="s1-s1" name="Test Api Usuarios" source="C:\Users\Matias Sanchez\PycharmProjects\robot_api_test\specs\test_api_usuarios.robot">
+<test id="s1-s1-t1" name="Scenario: Register on the Test site" line="11">
+<kw name="Given I do a POST" library="usuarios">
+<kw name="Start_session_serverest" library="config">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=serverest</arg>
+<arg>url=https://serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230626 15:54:23.651" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230626 15:54:23.650" endtime="20230626 15:54:23.651"/>
+</kw>
+<status status="PASS" starttime="20230626 15:54:23.650" endtime="20230626 15:54:23.651"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230626 15:54:23.651" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230626 15:54:23.651" endtime="20230626 15:54:23.652"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>alias=serverest</arg>
+<arg>url=/usuarios</arg>
+<arg>expected_status=201</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${body_request}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230626 15:54:23.993" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '100'} 
+ body={"nome": "Beltrano de Souza","email": "Silva@qa.com.br","password": "teste","administrador": "true"} 
+ </msg>
+<msg timestamp="20230626 15:54:23.993" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'b05b8afe-b92c-41b8-abc1-5903c395638d', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '7d926bacc770059c2f68e28208659566;o=1', 'Date': 'Mon, 26 Jun 2023 18:54:25 GMT', 'Server': 'Google Frontend', 'Content-Length': '53'} 
+ body={
+    "message": "Este email já está sendo usado"
+} 
+ </msg>
+<msg timestamp="20230626 15:54:23.993" level="INFO">C:\Users\Matias Sanchez\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1056: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230626 15:54:23.993" level="FAIL">Url: https://serverest.dev/usuarios Expected status: 400 != 201</msg>
+<status status="FAIL" starttime="20230626 15:54:23.652" endtime="20230626 15:54:23.996"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${message}</var>
+<arg>${response.json()['message']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230626 15:54:23.996" endtime="20230626 15:54:23.996"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230626 15:54:23.996" endtime="20230626 15:54:23.996"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Cadastro realizado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20230626 15:54:23.996" endtime="20230626 15:54:23.996"/>
+</kw>
+<status status="FAIL" starttime="20230626 15:54:23.650" endtime="20230626 15:54:23.997"/>
+</kw>
+<status status="FAIL" starttime="20230626 15:54:23.649" endtime="20230626 15:54:23.997">Url: https://serverest.dev/usuarios Expected status: 400 != 201</status>
+</test>
+<doc>The user do a resquest Get</doc>
+<status status="FAIL" starttime="20230626 15:54:23.510" endtime="20230626 15:54:23.998"/>
+</suite>
+<status status="FAIL" starttime="20230626 15:54:23.478" endtime="20230626 15:54:24.000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Specs">Specs</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test Api Usuarios">Specs.Test Api Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

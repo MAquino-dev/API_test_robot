@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230811 16:43:15.623" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Api Usuarios" source="C:\Users\Matias Sanchez\PycharmProjects\robot_api_test\specs\test_api_usuarios.robot">
+<test id="s1-t1" name="Scenario: Register on the Test site" line="12">
+<kw name="Given I do a POST" library="usuarios">
+<kw name="Start_session_serverest" library="config">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=serverest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230811 16:43:15.853" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230811 16:43:15.852" endtime="20230811 16:43:15.854"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:15.851" endtime="20230811 16:43:15.854"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230811 16:43:15.856" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230811 16:43:15.856" endtime="20230811 16:43:15.856"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>alias=serverest</arg>
+<arg>url=/usuarios</arg>
+<arg>expected_status=201</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${body_request}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230811 16:43:16.200" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '109'} 
+ body={"nome": "David Sanchez","email": "justsanchez@qa1.com.br","password": "teste-login","administrador": "true"} 
+ </msg>
+<msg timestamp="20230811 16:43:16.200" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+ status=201, reason=Created 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '869ecebd-c557-46b0-b397-d2b59967794a', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '4cd1a32af443dedd0b840ce116449e54;o=1', 'Date': 'Fri, 11 Aug 2023 19:43:16 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "YCvG6Z9I0SMupySw"
+} 
+ </msg>
+<msg timestamp="20230811 16:43:16.200" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230811 16:43:15.857" endtime="20230811 16:43:16.200"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${message}</var>
+<arg>${response.json()['message']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230811 16:43:16.201" level="INFO">${message} = Cadastro realizado com sucesso</msg>
+<status status="PASS" starttime="20230811 16:43:16.201" endtime="20230811 16:43:16.202"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230811 16:43:16.202" endtime="20230811 16:43:16.203"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Cadastro realizado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230811 16:43:16.203" endtime="20230811 16:43:16.204"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${generated_id}</arg>
+<arg>${response.json()['_id']}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230811 16:43:16.205" level="INFO">${generated_id} = YCvG6Z9I0SMupySw</msg>
+<status status="PASS" starttime="20230811 16:43:16.204" endtime="20230811 16:43:16.205"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:15.851" endtime="20230811 16:43:16.205"/>
+</kw>
+<kw name="When I do a GET" library="usuarios">
+<kw name="Start_session_serverest" library="config">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=serverest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230811 16:43:16.207" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230811 16:43:16.206" endtime="20230811 16:43:16.207"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:16.206" endtime="20230811 16:43:16.207"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>alias=serverest</arg>
+<arg>url=/usuarios/${generated_id}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230811 16:43:16.552" level="INFO">GET Request : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ path_url=/usuarios/YCvG6Z9I0SMupySw 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230811 16:43:16.552" level="INFO">GET Response : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'f180341a-42a6-42b3-84f9-4217c368fcec', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '8334dcaf3512ea4ebdb1bfe2c64f8c45', 'Date': 'Fri, 11 Aug 2023 19:43:16 GMT', 'Server': 'Google Frontend', 'Content-Length': '161'} 
+ body={
+    "nome": "David Sanchez",
+    "email": "justsanchez@qa1.com.br",
+    "password": "teste-login",
+    "administrador": "true",
+    "_id": "YCvG6Z9I0SMupySw"
+} 
+ </msg>
+<msg timestamp="20230811 16:43:16.552" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230811 16:43:16.207" endtime="20230811 16:43:16.552"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${user_data}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230811 16:43:16.554" level="INFO">${user_data} = {'nome': 'David Sanchez', 'email': 'justsanchez@qa1.com.br', 'password': 'teste-login', 'administrador': 'true', '_id': 'YCvG6Z9I0SMupySw'}</msg>
+<status status="PASS" starttime="20230811 16:43:16.553" endtime="20230811 16:43:16.554"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${user_data['_id']}</arg>
+<arg>${generated_id}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230811 16:43:16.555" endtime="20230811 16:43:16.555"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:16.206" endtime="20230811 16:43:16.555"/>
+</kw>
+<kw name="And I do a PUT to update user" library="usuarios">
+<kw name="Start_session_serverest" library="config">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=serverest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230811 16:43:16.556" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230811 16:43:16.556" endtime="20230811 16:43:16.557"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:16.556" endtime="20230811 16:43:16.557"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230811 16:43:16.557" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20230811 16:43:16.557" endtime="20230811 16:43:16.557"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>alias=serverest</arg>
+<arg>url=/usuarios/${generated_id}</arg>
+<arg>expected_status=200</arg>
+<arg>headers=${headers}</arg>
+<arg>data=${body_request_updated}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20230811 16:43:16.888" level="INFO">PUT Request : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ path_url=/usuarios/YCvG6Z9I0SMupySw 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '104'} 
+ body={"nome": "Matias Sanchez","email": "justsanchez@qa1.com.br","password": "teste","administrador": "true"} 
+ </msg>
+<msg timestamp="20230811 16:43:16.888" level="INFO">PUT Response : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '0abe01cb-be1d-4124-a537-d352f46efc62', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '7ffa38e3c5bd3018dbbd3f1c30e87b2d', 'Date': 'Fri, 11 Aug 2023 19:43:16 GMT', 'Server': 'Google Frontend', 'Content-Length': '50'} 
+ body={
+    "message": "Registro alterado com sucesso"
+} 
+ </msg>
+<msg timestamp="20230811 16:43:16.889" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230811 16:43:16.558" endtime="20230811 16:43:16.889"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${message}</var>
+<arg>${response.json()['message']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230811 16:43:16.890" level="INFO">${message} = Registro alterado com sucesso</msg>
+<status status="PASS" starttime="20230811 16:43:16.889" endtime="20230811 16:43:16.890"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Registro alterado com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230811 16:43:16.890" endtime="20230811 16:43:16.891"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:16.555" endtime="20230811 16:43:16.891"/>
+</kw>
+<kw name="And I do a GET again" library="usuarios">
+<kw name="Start_session_serverest" library="config">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=serverest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230811 16:43:16.891" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230811 16:43:16.891" endtime="20230811 16:43:16.892"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:16.891" endtime="20230811 16:43:16.892"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>alias=serverest</arg>
+<arg>url=/usuarios/${generated_id}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230811 16:43:17.228" level="INFO">GET Request : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ path_url=/usuarios/YCvG6Z9I0SMupySw 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230811 16:43:17.228" level="INFO">GET Response : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '5c34e13b-3ab0-423d-a2f5-fadcd3f97032', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '03a830c3861ea7892452b8d47105d31d', 'Date': 'Fri, 11 Aug 2023 19:43:17 GMT', 'Server': 'Google Frontend', 'Content-Length': '156'} 
+ body={
+    "nome": "Matias Sanchez",
+    "email": "justsanchez@qa1.com.br",
+    "password": "teste",
+    "administrador": "true",
+    "_id": "YCvG6Z9I0SMupySw"
+} 
+ </msg>
+<msg timestamp="20230811 16:43:17.229" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230811 16:43:16.892" endtime="20230811 16:43:17.229"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${updated_user_data}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230811 16:43:17.230" level="INFO">${updated_user_data} = {'nome': 'Matias Sanchez', 'email': 'justsanchez@qa1.com.br', 'password': 'teste', 'administrador': 'true', '_id': 'YCvG6Z9I0SMupySw'}</msg>
+<status status="PASS" starttime="20230811 16:43:17.229" endtime="20230811 16:43:17.230"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${updated_user_data['nome']}</arg>
+<arg>Matias Sanchez</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230811 16:43:17.230" endtime="20230811 16:43:17.231"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:16.891" endtime="20230811 16:43:17.231"/>
+</kw>
+<kw name="Then I DELETE the created user" library="usuarios">
+<kw name="Start_session_serverest" library="config">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=serverest</arg>
+<arg>url=https://serverest.dev</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230811 16:43:17.234" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230811 16:43:17.232" endtime="20230811 16:43:17.234"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:17.232" endtime="20230811 16:43:17.234"/>
+</kw>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>alias=serverest</arg>
+<arg>url=/usuarios/${generated_id}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20230811 16:43:17.575" level="INFO">DELETE Request : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ path_url=/usuarios/YCvG6Z9I0SMupySw 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230811 16:43:17.575" level="INFO">DELETE Response : url=https://serverest.dev/usuarios/YCvG6Z9I0SMupySw 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'c13a64ce-b411-4bf1-a137-c1fa0d09390a', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '006860445e2d4e49d2fe55744c445c7c', 'Date': 'Fri, 11 Aug 2023 19:43:17 GMT', 'Server': 'Google Frontend', 'Content-Length': '51'} 
+ body={
+    "message": "Registro excluído com sucesso"
+} 
+ </msg>
+<msg timestamp="20230811 16:43:17.576" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230811 16:43:17.235" endtime="20230811 16:43:17.576"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${message}</var>
+<arg>${response.json()['message']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230811 16:43:17.579" level="INFO">${message} = Registro excluído com sucesso</msg>
+<status status="PASS" starttime="20230811 16:43:17.577" endtime="20230811 16:43:17.580"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${message}</arg>
+<arg>Registro excluído com sucesso</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230811 16:43:17.580" endtime="20230811 16:43:17.581"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:17.232" endtime="20230811 16:43:17.581"/>
+</kw>
+<status status="PASS" starttime="20230811 16:43:15.850" endtime="20230811 16:43:17.581"/>
+</test>
+<doc>The user do a resquest Get</doc>
+<status status="PASS" starttime="20230811 16:43:15.626" endtime="20230811 16:43:17.582"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Api Usuarios">Test Api Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

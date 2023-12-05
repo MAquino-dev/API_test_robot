@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0256a59c-df84-4ebf-afd3-9c4fee651013" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2RkiBKGtKrLUZr3EdKPkHN952rx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matias Sanchez/PycharmProjects/robot_api_test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Matias Sanchez\PycharmProjects\robot_api_test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matias Sanchez\PycharmProjects\robot_api_test\resource" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0256a59c-df84-4ebf-afd3-9c4fee651013" name="Changes" comment="" />
+      <created>1687800342866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687800342866</updated>
+      <workItem from="1687800344135" duration="5286000" />
+      <workItem from="1687881493061" duration="15122000" />
+      <workItem from="1687914706675" duration="112000" />
+      <workItem from="1687956492798" duration="23156000" />
+      <workItem from="1687998589863" duration="1567000" />
+      <workItem from="1688009561733" duration="204000" />
+      <workItem from="1688042334891" duration="3142000" />
+      <workItem from="1688045815739" duration="8706000" />
+      <workItem from="1688132038763" duration="13186000" />
+      <workItem from="1688159412016" duration="4860000" />
+      <workItem from="1688216047483" duration="12300000" />
+      <workItem from="1688303112830" duration="473000" />
+      <workItem from="1688303640180" duration="5503000" />
+      <workItem from="1688392941001" duration="2823000" />
+      <workItem from="1688399791477" duration="15975000" />
+      <workItem from="1688477734064" duration="9948000" />
+      <workItem from="1688558118095" duration="26246000" />
+      <workItem from="1688643763516" duration="7869000" />
+      <workItem from="1688662031307" duration="2129000" />
+      <workItem from="1688682447494" duration="805000" />
+      <workItem from="1688734730700" duration="178000" />
+      <workItem from="1688746722646" duration="3575000" />
+      <workItem from="1689092363169" duration="1510000" />
+      <workItem from="1689098151760" duration="602000" />
+      <workItem from="1689100879112" duration="4224000" />
+      <workItem from="1689172115333" duration="546000" />
+      <workItem from="1689173891533" duration="2382000" />
+      <workItem from="1689185792770" duration="2823000" />
+      <workItem from="1689193768503" duration="154000" />
+      <workItem from="1689273034712" duration="1496000" />
+      <workItem from="1689283032091" duration="1819000" />
+      <workItem from="1689347112468" duration="1514000" />
+      <workItem from="1689352761629" duration="1241000" />
+      <workItem from="1689354366153" duration="257000" />
+      <workItem from="1690145388438" duration="597000" />
+      <workItem from="1691778470680" duration="492000" />
+      <workItem from="1691782920380" duration="681000" />
+      <workItem from="1691859379720" duration="1794000" />
+      <workItem from="1692296581028" duration="100000" />
+      <workItem from="1692455148942" duration="495000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/carrinhos.robot</url>
+          <line>16</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/usuarios.robot</url>
+          <line>11</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/usuarios.robot</url>
+          <line>10</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/usuarios.robot</url>
+          <line>9</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/usuarios.robot</url>
+          <line>8</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/usuarios.robot</url>
+          <line>12</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/usuarios.robot</url>
+          <line>13</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/requests/carrinhos.robot</url>
+          <line>14</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
